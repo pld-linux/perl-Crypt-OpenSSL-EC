@@ -17,11 +17,12 @@ Source0:	http://www.cpan.org/modules/by-module/Crypt/%{pdir}-%{pnam}-%{version}.
 # Source0-md5:	742f192f26bcac2249017cdd9e8bac35
 URL:		http://search.cpan.org/dist/Crypt-OpenSSL-EC/
 BuildRequires:	openssl-devel >= 0.9.8i
-BuildRequires:	perl-Crypt-OpenSSL-Bignum >= 0.04
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
+BuildRequires:	perl-Crypt-OpenSSL-Bignum >= 0.04
 %endif
+Requires:	perl-Crypt-OpenSSL-Bignum >= 0.04
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
