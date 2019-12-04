@@ -9,7 +9,7 @@ Summary:	Crypt::OpenSSL::EC - Perl extension for OpenSSL EC (Elliptic Curves) li
 Summary(pl.UTF-8):	Crypt::OpenSSL::EC - moduł Perla do obliczeń na krzywych eliptycznych
 Name:		perl-Crypt-OpenSSL-EC
 Version:	1.01
-Release:	6
+Release:	7
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
