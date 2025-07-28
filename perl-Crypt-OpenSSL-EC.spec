@@ -14,6 +14,7 @@ License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Crypt/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	0ac9adc9e597cb492ed7255741426909
+Patch0:		deadcode.patch
 URL:		https://metacpan.org/dist/Crypt-OpenSSL-EC
 BuildRequires:	openssl-devel >= 0.9.8i
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -41,6 +42,7 @@ i stałych.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
+%patch -P0 -p1
 
 %build
 %{__perl} Makefile.PL \
