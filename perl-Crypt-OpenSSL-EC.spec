@@ -7,17 +7,16 @@
 Summary:	Crypt::OpenSSL::EC - Perl extension for OpenSSL EC (Elliptic Curves) library
 Summary(pl.UTF-8):	Crypt::OpenSSL::EC - moduł Perla do obliczeń na krzywych eliptycznych
 Name:		perl-Crypt-OpenSSL-EC
-Version:	1.32
-Release:	9
+Version:	1.34
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/Crypt/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	0ac9adc9e597cb492ed7255741426909
-Patch0:		deadcode.patch
+Source0:	https://www.cpan.org/authors/id/R/RA/RADIATOR/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	98eb43e46b1bc77f1cbb2ee188907f1f
 URL:		https://metacpan.org/dist/Crypt-OpenSSL-EC
 BuildRequires:	openssl-devel >= 0.9.8i
-BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	perl-devel >= 1:5.8.5
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	rpmbuild(macros) >= 1.745
 %if %{with tests}
@@ -42,7 +41,6 @@ i stałych.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
-%patch -P0 -p1
 
 %build
 %{__perl} Makefile.PL \
@@ -64,9 +62,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Changes README
+%doc Changes README.md
 %{perl_vendorarch}/Crypt/OpenSSL/EC.pm
 %dir %{perl_vendorarch}/auto/Crypt/OpenSSL/EC
 %{perl_vendorarch}/auto/Crypt/OpenSSL/EC/autosplit.ix
-%attr(755,root,root) %{perl_vendorarch}/auto/Crypt/OpenSSL/EC/*.so
+%{perl_vendorarch}/auto/Crypt/OpenSSL/EC/EC.so
 %{_mandir}/man3/Crypt::OpenSSL::EC.3pm*
